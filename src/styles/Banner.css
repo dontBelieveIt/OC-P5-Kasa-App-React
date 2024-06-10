@@ -1,7 +1,8 @@
 .kasa-banner {
     display: flex; 
     flex-direction: column;
-    padding: 1rem;;
+    padding: 1rem;
+    gap: 0.5rem;
 }
 
 .nav-bar {
@@ -9,6 +10,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: .8rem;
+}
+.nav-bar>img {
+    height: 2rem;
 }
 
 .nav-btn> button {
@@ -19,17 +24,16 @@
 
 .banner-cover {
     width: 100%;
-    height: 5rem; 
-}
-.banner-cover>img {
-    order: -1;
-    width:inherit;
-    height:inherit;
-    object-fit: cover;
-    border-radius: 15px;
-}
-.banner-cover::after {
-    content:"Chez vous, partout, ailleurs"; 
+    height: 7rem; 
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+    url('../assets/Image\ source\ 1.png') ;
+    background-size:cover;
+    border-radius: 25px;
     color: white;
-    order: 3;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+    box-shadow: 0 4 black ;
 }

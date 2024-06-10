@@ -1,6 +1,5 @@
 import '../styles/Banner.css'
 import logo from '../assets/LOGO.svg'
-import cover from '../assets/Image source 1.png'
 
 function Banner() {
     return(
@@ -12,8 +11,8 @@ function Banner() {
                     <button>A propos</button>
                 </div>
             </div>
-            <div className='banner-cover'>
-                <img src={cover} alt='Chez vous, partout et ailleurs' />
+            <div className='banner-cover' alt="Chez vous, partout et ailleurs">
+                Chez vous, partout et ailleurs
             </div>
         </div>
     )
