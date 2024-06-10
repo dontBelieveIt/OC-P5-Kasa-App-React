@@ -6,7 +6,7 @@ function Thumb() {
         return(
         <li key={element.id}> 
             <article className='kasa-thumb-article' style={{ 
-      backgroundImage: `url(${element.cover})`}} alt={element.name} >
+      backgroundImage:`url(${element.cover})`}} alt={element.name} >
                 <div className='kasa-thumb-article__title'>{element.name}</div>
             </article>
         </li> 
