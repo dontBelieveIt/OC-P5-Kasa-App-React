@@ -1,59 +1,36 @@
 import "./APropos_Style.scss";
+import { useEffect, useState } from "react";
 import logo2 from "../../assets/Image2.png";
 import arrowBack from "../../assets/arrowBack.png";
 
+import AProposContent from "./AProposContent"
+
 export default function AProposIndex() {
-  return (
-    <div className="apropos-div">
-      <img
-        src={logo2}
-        className="banner-cover"
-        alt="Chez vous, partout et ailleurs"
-      />
-      <div className="apropos-menu-collapse">
-        <div className="apropos-menu-collapse__item">
-          Fiabilité
-          <img src={arrowBack} alt="Open menu" />
-        </div>
-        <div className="apropos-menu-collapse__content">
-          Les annonces postées sur Kasa garantissent une fiabilité totale. Les
-          photos sont conformes aux logements, et toutes les informations sont
-          régulièrement vérifiées par nos équipes.
-        </div>
+  const [toggle, setToggle] = useState(false)
 
-        <div className="apropos-menu-collapse__item">
-          Respect
-          <img src={arrowBack} alt="Open menu" />
-        </div>
-        <div className="apropos-menu-collapse__content">
-          La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-          comportement discriminatoire ou de perturbation du voisinage
-          entraînera une exclusion de notre plateforme.
-        </div>
-
-        <div className="apropos-menu-collapse__item">
-          Services
-          <img src={arrowBack} alt="Open menu" />
-        </div>
-        <div className="apropos-menu-collapse__content">
-          La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-          comportement discriminatoire ou de perturbation du voisinage
-          entraînerai une exclusion de notre plateforme.
-        </div>
-
-        <div className="apropos-menu-collapse__item">
-          Sécurité
-          <img src={arrowBack} alt="Open menu" />
-        </div>
-        <div className="apropos-menu-collapse__content">
-          La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
-          pour les voyageurs, chaque logement correspond aux critères de
-          sécurité établis pour nos services. En laissant une note aussi bien à
-          l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les
-          standards sont bien respectés/ Nous organisons également des ateliers
-          sur la sécurité domestiques pour nos hôtes.
-        </div>
-      </div>
-    </div>
+  return (   
+  <div className="a-propos-layout">
+    <img
+          src={logo2}
+          className="banner-cover"
+          alt="Chez vous, partout et ailleurs"
+        />
+    <ul className="ul-container">
+      {AProposContent.map((item) => (
+        <li key={item.id}>
+          <div className="li-container">
+            <div className="apropos-collapse__category" onClick={(e) => setToggle(!toggle)}>
+              {item.category}
+              <img src={arrowBack} alt="Open menu" /> 
+              </div>
+              {toggle && (
+                <div className="apropos-menu-collapse__content">
+                {item.content}
+              </div>)}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
   );
 }

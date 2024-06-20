@@ -1,10 +1,12 @@
+import { NavLink, useParams } from "react-router-dom";
 import Logements from "../../datas/logements.json";
+// import useEffect from "./useEffect";
 import "./Home.scss";
 import Banner from "./Banner";
-import { NavLink, useParams } from "react-router-dom";
 
 export default function Home() {
   const { routeId } = useParams();
+
   return (
     <>
       <Banner />
@@ -13,7 +15,7 @@ export default function Home() {
           {Logements.map((data) => (
             <li key={data.id}>
               <article className="article-log">
-                <NavLink to={`logement/${routeId}`}>
+                <NavLink to={`logement/${data.id}`}>
                   <img
                     src={data.cover}
                     className="article-log__img"
