@@ -1,0 +1,41 @@
+// NavBar style
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+  }
+  .nav-bar a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .kasa-logo img {
+    height: 2rem;
+  }
+  
+  .nav-btn > button {
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+  }
+  
+  // Footer style
+  .kasa-footer {
+    background-color: black;
+    font-family: var(--font), sans-serif;
+    color: white;
+    font-size: 0.8rem;
+    height: 13rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .kasa-footer > img {
+    height: 2.5rem;
+    object-fit: cover;
+    margin: 2rem;
+  }
+  
