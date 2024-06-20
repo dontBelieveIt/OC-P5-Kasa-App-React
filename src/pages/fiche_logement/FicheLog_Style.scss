@@ -86,7 +86,7 @@
     width: 3em;
     height: 2.5em;
     border-radius: 100px;
-    background-color: #c4c4c4;
+    background-color: var(--grey);
   }
   .fiche-log-host__name {
     text-align: right;

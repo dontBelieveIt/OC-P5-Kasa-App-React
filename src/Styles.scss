@@ -2,7 +2,7 @@
 
 :root {
   --primary: #ff6060;
-  --Bg-color: #f6f6f6;
+  --bg-color: #f6f6f6;
   --grey: #c4c4c4;
   --font: "Montserrat", sans-serif;
 }
@@ -10,4 +10,10 @@
   font-family: "Montserrat", sans-serif;
   text-align: center;
   margin: 0 2rem;
+}
+a, a:hover, a:visited {
+  text-decoration: none;
+}
+ul, li {
+  margin-left: -16px;
 }
