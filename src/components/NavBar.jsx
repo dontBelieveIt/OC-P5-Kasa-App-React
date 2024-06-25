@@ -1,5 +1,5 @@
 import "./Footer-NavBar.scss";
-import logo from "../assets/LOGO.svg";
+import logo from "../assets/logo/LOGO.svg";
 import React from "react";
 import { NavLink } from "react-router-dom";
 

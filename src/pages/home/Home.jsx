@@ -3,6 +3,7 @@ import Logements from "../../datas/logements.json";
 // import useEffect from "./useEffect";
 import "./Home.scss";
 import Banner from "./Banner";
+import LoadingPage from "../../components/Loading";
 
 export default function Home() {
   const { routeId } = useParams();
