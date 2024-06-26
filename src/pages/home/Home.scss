@@ -45,7 +45,7 @@ li {
 }
 // article a::after {
 //   content: "";
-//   position: absolute ;
+//   position: relative ;
 //   z-index: 1000000;
 //   width: var(--card-size);
 //   height: var(--card-size);
@@ -63,7 +63,7 @@ li {
   left: 0.5rem;
   font-size: 18px;
   color: white;
-  background-color: black;
+  background-color: grey;
   font-weight: 700;
   z-index: 100;
 }

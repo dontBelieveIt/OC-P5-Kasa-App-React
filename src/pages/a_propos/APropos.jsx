@@ -1,5 +1,5 @@
 import "./APropos_Style.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import logo2 from "../../assets/banners/banner_about_img.png";
 import arrowBack from "../../assets/collapsible/arrow_back.svg";
 
