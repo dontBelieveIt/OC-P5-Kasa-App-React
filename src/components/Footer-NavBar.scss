@@ -27,12 +27,13 @@
     color: white;
     font-size: 0.8rem;
     height: 13rem;
-    width: 100%;
+    width: 106%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    margin: -3%;
+    overflow: hidden;
   }
   .kasa-footer > img {
     height: 2.5rem;
