@@ -21,7 +21,11 @@
     } 
   }
   // For the FicheLogCarrousel function
-  .fiche-log-carrousel, .fiche-log-carrousel img {
+  .fiche-log-carrousel {
+    display:flex;
+    flex-direction: row;
+  }
+  .fiche-log-carrousel, .carrousel-img {
     // background-color: var(--grey);
     aspect-ratio: 5 / 2;
     width: 100%;
@@ -33,6 +37,47 @@
       aspect-ratio: 5 / 4;
     }
   }
+  .carrousel-slider {
+    z-index: 5000;
+    order: 5000;
+    width: 100%;
+  }
+  .carrousel-btn {
+    position: absolute; 
+    z-index:1; 
+    top: 50%; 
+    transform: translateY(-50%);
+    height: 30rem;
+    width: 30%;
+    background-color: transparent;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    @media screen and (max-width: 767.98px) and (min-width: 320px) {
+      top:45%;
+      width:7rem;
+      height: 30%;
+      } 
+  }
+  .carrousel-previous {
+    left: 2rem;
+    background-color: green;
+    align-items: baseline;
+  }
+  .carrousel-previous img {
+    rotate: -90deg;
+    height: 4rem;
+    }
+  .carrousel-next {
+    right: 2rem;
+    background-color: blue;
+    align-items: flex-end;
+  }
+  .carrousel-next img {
+    rotate: 90deg;
+    height: 4rem;
+    }
   .fiche-log-description {
     display: flex;
     flex-wrap: wrap;
@@ -162,13 +207,15 @@
     border: 1px solid violet;
     display: flex;
     width: 23rem;
-    justify-content: space-between;
+    justify-content: flex-start;
+  }
+  .fiche-log-tag button {
+    margin-right: 5%;
   }
   @media screen and (max-width: 767.98px) and (min-width: 320px) {
     .fiche-log-tag button {
       margin-right: 3%;
       flex-wrap: wrap;
-      justify-content: flex-start;
     } 
   }
   @media screen and (max-width: 426px) and (min-width: 320px) {

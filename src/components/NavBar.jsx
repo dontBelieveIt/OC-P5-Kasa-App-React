@@ -1,9 +1,22 @@
 import "./Footer-NavBar.scss";
 import logo from "../assets/logo/LOGO.svg";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function NavBar() {
+  const path = useLocation(); 
+  const [underlined, setUnderlined] = useState(""); 
+  useEffect(() => {
+    if (path.pathname === "/") {
+        setUnderlined("home")
+    } else if (path.pathname === "/about") {
+        setUnderlined("about")
+    } else {
+        setUnderlined("")
+    }
+  }, [path])
+
   return (
     <div className="nav-bar">
       <div className="kasa-logo">
@@ -13,10 +26,10 @@ export default function NavBar() {
       </div>
       <div className="nav-btn">
         <button>
-          <NavLink to={`/`}>Accueil</NavLink>
+          <NavLink to={`/`} className={underlined === "home" ? "underlined" : null}>Accueil</NavLink>
         </button>
         <button>
-          <NavLink to={`/about`}>A propos</NavLink>
+          <NavLink to={`/about`} className={underlined === "about" ? "underlined" : null}>A propos</NavLink>
         </button>
       </div>
     </div>

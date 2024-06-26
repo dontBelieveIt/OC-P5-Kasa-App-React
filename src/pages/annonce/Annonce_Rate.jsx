@@ -4,7 +4,6 @@ import StarInactive from "../../assets/rates_stars/starInactive.svg";
 export default function AnnonceRate({rate}) {
 const totalStars = 5
 const note = totalStars - rate
-console.log(rate, totalStars, note)
 
   return (
     <div className="fiche-log-rate" alt="Cette appartement a une note de {rate}/5">

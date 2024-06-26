@@ -8,7 +8,6 @@ import AnnonceRender from "./annonce/Annonce_Render";
 import ErrorPage from "./error_page/ErrorPage";
 
 export default function Router() {
-
   return (
     <BrowserRouter basename="/">
       <NavBar />
