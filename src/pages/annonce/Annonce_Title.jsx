@@ -1,8 +1,8 @@
-export default function AnnonceTitle() {
+export default function AnnonceTitle(title, location) {
     return (
       <div className="fiche-log-titre">
-        <h2>Cozy Loft on the Canal Saint-Martin</h2>
-        <h3>Paris, île de France</h3>
+        <h2>{title}</h2>
+        <h3>{location}</h3>
       </div>
     );
   }

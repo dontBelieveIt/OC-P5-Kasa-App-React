@@ -1,4 +1,7 @@
 export default function AnnonceCarrousel() {
-    return <div className="fiche-log-carrousel"></div>;
+    return(
+    <div className="fiche-log-carrousel">
+    </div>
+    )
   }
   

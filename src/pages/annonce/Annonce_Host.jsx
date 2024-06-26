@@ -1,8 +1,12 @@
-export default function AnnonceHost() {
+export default function AnnonceHost(hostName, hostAvatar) {
     return (
       <div className="fiche-log-host">
-        <div className="fiche-log-host__name">Alexandre DUMAS</div>
-        <div className="fiche-log-host__avatar"></div>
+        <div className="fiche-log-host__name">
+          {hostName}
+        </div>
+        <div className="fiche-log-host__avatar">
+          {hostAvatar}
+        </div>
       </div>
     );
   }

@@ -1,28 +1,27 @@
-import "./Annonce_Style.scss";
+// import "./Annonce_Style.scss";
 
-import AnnonceCarrousel from "./Annonce_Carrousel";
-import AnnonceTitle from "./Annonce_Title";
-import AnnonceHost from "./Annonce_Host";
-import AnnonceRate from "./Annonce_Rate";
-import AnnonceTags from "./Annonce_Tags";
-import AnnonceDetails from "./Annonce_Details";
+// // import { useParams } from "react-router-dom";
+// import { Children } from "react";
+// import { AnnonceContextProvider } from "./Context_Annonce";
+// import PropTypes from "prop-types";
 
-export default function AnnonceIndex() {
+// function AnnonceIndex() {
+//   // const { Logements } = useContext(AnnonceContext)
+//   // const { routeId } = useParams();
+//   // const annonce = Logements.find((annonce) => annonce.id === routeId)
 
-  return (
-    <div className="fiche-log-index">
-      <AnnonceCarrousel />
-      <div className="fiche-log-description">
-        <div className="fiche-log__titre-tag">
-          <AnnonceTitle />
-          <AnnonceTags />
-        </div>
-        <div className="fiche-log__host-rate">
-          <AnnonceHost />
-          <AnnonceRate />
-        </div>
-      </div>
-      <AnnonceDetails />
-    </div>
-  );
-}
+//   return (
+//     <>
+//       <AnnonceContextProvider>
+//        <Children />
+//       </AnnonceContextProvider>
+//     </>
+//   );
+// }
+
+// AnnonceContextProvider.propTypes = {
+//   children: PropTypes.node.isRequired,
+// }; 
+
+
+// export default AnnonceIndex
