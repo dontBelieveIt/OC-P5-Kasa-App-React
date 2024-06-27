@@ -1,5 +1,6 @@
-// import arrowBack from "../../assets/collapsible/arrow_back.svg";
 import { useState } from "react";
+import arrowPrevious from "../../assets/carrousel/arrowPrevious.svg"; 
+import arrowNext from "../../assets/carrousel/arrowNext.svg";
 
 export default function AnnonceCarrousel({cover, pictures}) {
   const [ count, setCount ] = useState(0); 
@@ -29,13 +30,18 @@ export default function AnnonceCarrousel({cover, pictures}) {
       <>
         <div className="fiche-log-carrousel">
           <div className="carrousel-slider">
+              <div className="carrousel-btn">
+              <div className="carrousel-previous" alt="Go to previous photo" onClick={previousSlide}>
+                <img src={arrowPrevious} alt="Go to previous photo" />
+              </div>
+              <div href="#" className="carrousel-next" alt="Go to next photo" onClick={nextSlide}>
+                <img src={arrowNext} alt="Go to next photo" />
+              </div>
+             </div>
             {pictures.map((slide, index) =>
               <img className={`carrousel-img ${index === count ? 'active' : 'none'}`} key={index + 1} src={slide} alt={`Image ${index +1}`} />
             )}
-            <div className="carrousel-btn">
-              <div className="carrousel-previous" alt="Go to previous photo" onClick={previousSlide}></div>
-              <div href="#" className="carrousel-next" alt="Go to next photo" onClick={nextSlide}></div>
-            </div>
+          
           </div>
         </div>
     </>

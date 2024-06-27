@@ -11,6 +11,10 @@
   --border-desktop: 25px; 
   --border-mobile : 10px;
 }
+* {
+  margin: 0; 
+  box-sizing: border-box;
+}
 .App {
   font-family: "Montserrat", sans-serif;
   text-align: center;
