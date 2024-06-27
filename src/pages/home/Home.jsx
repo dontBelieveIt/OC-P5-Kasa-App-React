@@ -5,6 +5,7 @@ import Logements from "../../datas/logements.json"
 
 export default function Home() {
   const { routeId } = useParams();
+  document.title = "Kasa - Location immobilière"
   
   return (
     <>

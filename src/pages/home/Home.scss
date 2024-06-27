@@ -1,6 +1,6 @@
 :root {
   --card-size : 21.25rem;
-  --card-mobile : 14rem;
+  --card-mobile : 95vw;
 }
 
 .article-layout,
@@ -12,20 +12,41 @@
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 767.98px) and (min-width: 320px) {
+    padding: 0; 
+    flex-direction: column;
+    margin: 1rem 0;
+    border-radius: var(--border-mobile);
+  }
 }
 .article-layout {
   background-color: var(--bg-color);
-  border-radius: 25px;
+  border-radius: var(--border-desktop);
   margin: 2rem 0;
   padding: 2rem;
+
+  & > ul, li {
+  margin-left: 0;
+  }
+
+  @media screen and (max-width: 767.98px) and (min-width: 320px) {
+      height: auto;
+      border-radius: var(--border-mobile);
+      background-color: transparent;
+      padding:0; 
+      margin: 1rem 0;
+  }
 }
-.article-layout > ul,
-li {
-  list-style: none;
-  list-style-type: none;
-}
+
 .article-list {
   gap: 1.5rem;
+}
+
+article {
+  @media screen and (max-width: 767.98px) and (min-width: 320px) {
+    width: 100%;
+  }
 }
 .article-log {
   border-radius: 10px;
@@ -37,7 +58,13 @@ li {
   margin-bottom: 2rem;
   transition: transform 0.5s ease;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.267);
+
+  @media screen and (max-width: 767.98px) and (min-width: 320px) {
+      margin-bottom: 1rem;
+      width: var(--card-mobile);
+  }
 }
+
 .article-log__img {
   object-fit: cover;
   width: var(--card-size);
@@ -45,15 +72,16 @@ li {
   aspect-ratio: 1 / 1;
   border-radius: 10px;
   // z-index: -30;
+  @media screen and (max-width: 767.98px) and (min-width: 320px) {
+    width: var(--card-mobile);
+    height: var(--card-size);
+  }
 }
-.article-log__img img {
-  backdrop-filter: invert(100%);
-}
-// article.article-log::after{
+// article a::after{
 //   content: "";
 //   background: linear-gradient(180deg, rgb(255, 0, 0) 0%, rgba(255, 255, 255, 0.4) 100%);
 //   display: block;
-//   position: absolute ;
+//   // position: absolute ;
 //   z-index: 1000000;
 //   order: 1000;
 //   width: var(--card-size);
@@ -75,21 +103,13 @@ li {
   background-color: grey;
   font-weight: 700;
   z-index: 100;
+
+  @media screen and (max-width: 767.98px) and (min-width: 320px) {
+    width: 22rem;
+    font-size: 22px;
+  }
 }
 .article-log__title a {
   text-decoration: none;
   color: unset;
-}
-@media screen and (max-width: 767.98px) and (min-width: 320px) {
-  .article-layout, .article-list {
-    padding: 0; 
-    background-color: transparent;
-  } 
-  .article-layout > ul, li {
-    width: 90%;
-    height: auto;
-  }
-  .article-log {
-    margin-bottom: 1rem;
-  }
 }

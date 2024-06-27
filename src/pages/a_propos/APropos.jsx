@@ -6,6 +6,7 @@ import arrowBack from "../../assets/collapsible/arrow_back.svg";
 import AProposContent from "../../datas/AProposContent"
 
 export default function AProposIndex() {
+  document.title = "Kasa - A propos"
   let [toggle, setToggle] = useState(false)
 
   return (   

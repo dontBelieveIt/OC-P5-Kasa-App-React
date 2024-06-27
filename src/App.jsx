@@ -9,7 +9,6 @@ import LoadingPage from "./components/Loading";
 import { AnnonceContextProvider } from "./pages/annonce/Context_Annonce";
 
 export default function App() {
-  document.title = 'Kasa: Location immobilière'
   return (
     <>
       <div className="App">

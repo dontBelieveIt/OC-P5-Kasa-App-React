@@ -1,19 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
+  // colors:
   --primary: #ff6060;
   --bg-color: #f6f6f6;
   --grey: #c4c4c4;
+  // font
   --font: "Montserrat", sans-serif;
+  // border-radius
+  --border-desktop: 25px; 
+  --border-mobile : 10px;
 }
 .App {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   margin: 0 2rem;
+  @media screen and (max-width: 767.98px) and (min-width: 320px) {
+    margin: 0; 
+  }
 }
 a, a:hover, a:visited {
   text-decoration: none;
+  a:hover {
+    color: var(--primary); 
+    transition: 0.8s;
+  }
 }
 ul, li {
   margin-left: -16px;
+  list-style: none;
+  list-style-type: none;
 }

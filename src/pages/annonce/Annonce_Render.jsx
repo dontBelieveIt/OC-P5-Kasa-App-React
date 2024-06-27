@@ -14,6 +14,7 @@ export default function AnnonceRender() {
   const { routeId } = useParams();
   const annonce = Logements.find((annonce)=> annonce.id === routeId)
 
+  document.title = `Kasa - ${annonce.title}`
   return (
     <>
         <div className="fiche-log-index" key={annonce.id}>

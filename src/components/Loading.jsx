@@ -49,6 +49,7 @@ const LoadingStyle = styled.div`
 `
 
 export default function LoadingPage() {
+  document.title = "Kasa - Loading page";
     return(
         <LoadingStyle>
             <div className="loading-container">
