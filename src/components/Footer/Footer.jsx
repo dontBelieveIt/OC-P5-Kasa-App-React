@@ -1,5 +1,5 @@
-import "./Footer-NavBar.scss";
-import FooterLogo from "../assets/logo/Footer.svg";
+import "./Footer.scss";
+import FooterLogo from "../../assets/logo/Footer.svg";
 
 export default function Footer() {
   return (

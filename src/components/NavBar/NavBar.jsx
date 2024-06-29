@@ -1,5 +1,5 @@
-import "./Footer-NavBar.scss";
-import logo from "../assets/logo/LOGO.svg";
+import "./NavBar.scss";
+import logo from "../../assets/logo/LOGO.svg";
 import React from "react";
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
