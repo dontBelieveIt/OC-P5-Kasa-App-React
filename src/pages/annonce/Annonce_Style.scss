@@ -164,15 +164,15 @@
     flex: 4;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: flex-end;
     gap: 1rem;
-    margin-top: 1.4rem;
   }
   @media screen and (max-width: 767.98px) and (min-width: 320px) {
     .fiche-log__host-rate {
       flex-direction: row-reverse;
-      align-items: center;
+        align-items: center;
+        justify-content: space-between;
     }
   }
   // Fiche for the FicheLogHost function
@@ -205,35 +205,29 @@
     height: 2rem;
     border: 1px solid green;
   }
-  @media screen and (max-width: 767.98px) and (min-width: 320px) {
-    .fiche-log-rate {
-      flex-direction: row-reverse;
-    }
-  }
   .fiche-log-rate img {
-    width: 1.5rem;
+    width: 2rem;
     margin-left: 0.5rem;
     border: 1px solid indigo;
+    @media screen and (max-width: 767.98px) and (min-width: 320px) {
+      margin-left:  0; 
+      margin-right: 0.5rem;
+      } 
   }
 
   //For the FicheLogTag function
   .fiche-log-tag {
     border: 1px solid violet;
     display: flex;
-    width: 23rem;
+    // width: 23rem;
     justify-content: flex-start;
+    margin: 0.8rem 0;
   }
   .fiche-log-tag button {
     margin-right: 5%;
-  }
   @media screen and (max-width: 767.98px) and (min-width: 320px) {
-    .fiche-log-tag button {
       margin-right: 3%;
       flex-wrap: wrap;
-    }
-  }
-  @media screen and (max-width: 426px) and (min-width: 320px) {
-    .fiche-log-tag button {
       width:100%;
     }
   }
@@ -243,9 +237,13 @@
     border: none;
     padding: 0.2rem 0.8rem;
     color: white;
-    // width: 7rem;
+    width: fit-content;
     height: 1.5rem;
     border-radius: 15px;
+
+    @media screen and (max-width: 767.98px) and (min-width: 320px) {
+      border-radius: 5px;
+    }
   }
   //For the FicheLogDetails function
   .fiche-log-details {
@@ -260,6 +258,7 @@
       flex-direction: column;
       height: auto;
       gap: 1.25rem;
+      margin-top: 1.25rem;
     }
   }
 
@@ -287,7 +286,7 @@
 
     @media screen and (max-width: 767.98px) and (min-width: 320px) {
       height: 3rem;
-      width: 98%;
+      width: 100%;
     }
   }
   .fiche-log-details__collapsible img {
@@ -295,7 +294,7 @@
   }
   .fiche-log-details__elements {
     background-color: var(--bg-color);
-    width:99%;
+    width:100%;
     padding: 0.5rem;
     line-height: 1.4;
     text-align: left;

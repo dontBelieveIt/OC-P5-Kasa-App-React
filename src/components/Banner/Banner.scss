@@ -1,0 +1,50 @@
+.banner {
+    width: 100%;
+    height: 13rem;
+    border-radius: var(--border-desktop);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.267);
+
+    @media screen and (max-width: 767.98px) and (min-width: 320px) {
+        height: 7rem;
+        border-radius: var(--border-mobile);
+      }
+
+  & h1 {
+    text-shadow: var(--text-shadow);
+    position: absolute;
+    color: white;
+    z-index: 5;
+    max-width: 90%;
+  }   
+
+  &__overlay {
+    background: black;
+    height: inherit;
+    left: 2rem;
+    border-radius: var(--border-desktop);
+    right: 2rem;
+    position: absolute;
+    z-index: 3;
+
+    @media screen and (max-width: 767.98px) and (min-width: 320px) {
+      margin: 0;
+      left: 5%;
+      right: 5%;
+      border-radius: var(--border-mobile);
+    }
+  }
+    
+  &__img {
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--border-desktop);
+
+    @media screen and (max-width: 767.98px) and (min-width: 320px) {
+      border-radius: var(--border-mobile);
+    }
+  }
+}

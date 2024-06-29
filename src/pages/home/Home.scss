@@ -1,6 +1,6 @@
 :root {
   --card-size : 21.25rem;
-  --card-mobile : 95vw;
+  --card-mobile : 90vw;
 }
 
 .article-layout,
@@ -26,16 +26,15 @@
   margin: 2rem 0;
   padding: 2rem;
 
-  & > ul, li {
-  margin-left: 0;
-  }
-
   @media screen and (max-width: 767.98px) and (min-width: 320px) {
       height: auto;
       border-radius: var(--border-mobile);
       background-color: transparent;
       padding:0; 
       margin: 1rem 0;
+    & > ul, li {
+      margin-left: 0;
+      }
   }
 }
 

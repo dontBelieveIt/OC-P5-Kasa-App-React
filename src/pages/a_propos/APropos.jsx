@@ -1,9 +1,10 @@
 import "./APropos_Style.scss";
 import { useState } from "react";
-import logo2 from "../../assets/banners/banner_about_img.png";
+import Banner from '../../components/Banner/Banner'
+import BannerAbout from "../../assets/banners/banner_about_img.png"
 import arrowBack from "../../assets/collapsible/arrow_back.svg";
 
-import AProposContent from "../../datas/AProposContent"
+import AProposContent from "../../datas/AProposContent"; 
 
 export default function AProposIndex() {
   document.title = "Kasa - A propos"
@@ -11,11 +12,11 @@ export default function AProposIndex() {
 
   return (   
   <div className="a-propos-layout">
-    <img
-          src={logo2}
-          className="banner-cover"
-          alt="Chez vous, partout et ailleurs"
-        />
+    <Banner 
+      imgSrc={BannerAbout}
+      slogan={false}
+      opacity={0.3}
+      />
     <ul className="ul-container">
       {AProposContent.map((item) => (
         <li key={item.id}>

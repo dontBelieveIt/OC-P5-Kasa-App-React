@@ -1,7 +1,10 @@
 import { NavLink, useParams } from "react-router-dom";
-import "./Home.scss";
-import Banner from "./Banner";
 import Logements from "../../datas/logements.json"
+
+import "./Home.scss";
+import Banner from "../../components/Banner/Banner";
+import PropTypes from 'prop-types';
+import BannerImage from "../../assets/banners/banner_home_img.png"
 
 export default function Home() {
   const { routeId } = useParams();
@@ -9,7 +12,11 @@ export default function Home() {
   
   return (
     <>
-      <Banner />
+      <Banner 
+      imgSrc={BannerImage}
+      slogan={true}
+      opacity={0.6}
+      />
       <div className="article-layout">
         <ul className="article-list">
           {Logements.map((item) => (
