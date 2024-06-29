@@ -1,0 +1,83 @@
+// For the FicheLogCarrousel function
+@mixin carrousel-size {
+    max-height: 500px; 
+    width: 100%;
+    aspect-ratio: 5 / 2;
+
+    @media screen and (max-width: 1200px) {
+      max-height: 300px;
+    }
+    @media screen and (max-width: 767.98px) {
+      aspect-ratio: 5 / 4;
+      border-radius: var(--border-mobile);
+    }
+}
+
+.carrousel {
+    display:flex;
+    flex-direction: row;
+    @include carrousel-size;
+
+  &, .carrousel-img {
+    background-color: var(--grey);
+    border-radius: var(--border-desktop);
+    object-fit: cover;
+    @include carrousel-size;
+  }
+}
+.carrousel__slider {
+@include carrousel-size;
+}
+.carrousel-img {
+    position: absolute;
+    top: 7rem;
+
+    @media screen and (max-width: 767767.98px) {
+        top: 5rem;
+    }
+}
+.carrousel-img.active {
+    display:block;
+    animation: fade 0.8s;
+}
+    @keyframes fade {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity : 1;
+        }
+    }
+.carrousel-img:not(.active) {
+    display: none;
+}
+.carrousel-btn {
+    // position: absolute;
+    bottom: 0;
+    z-index: 500;
+    display: flex;
+    flex-direction: row;
+    // top: 7rem;
+    border: 1px solid deeppink;
+    overflow: hidden;
+    @include carrousel-size;
+}
+.carrousel-previous, .carrousel-next {
+width: 30%;
+height: 100%;
+border: 1px solid blue;
+margin: auto;
+position: absolute;
+// top: 6rem;
+display: flex;
+align-items: center;
+padding: 3rem;
+}
+.carrousel-previous {
+left: -1rem;
+justify-content: flex-start;
+}
+.carrousel-next {
+right: -1rem;
+justify-content: flex-end;
+}

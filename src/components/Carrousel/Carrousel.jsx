@@ -1,6 +1,7 @@
 import { useState } from "react";
 import arrowPrevious from "../../assets/carrousel/arrowPrevious.svg"; 
 import arrowNext from "../../assets/carrousel/arrowNext.svg";
+import "./Carrousel.scss"
 
 export default function AnnonceCarrousel({cover, pictures}) {
   const [ count, setCount ] = useState(0); 
@@ -28,8 +29,8 @@ export default function AnnonceCarrousel({cover, pictures}) {
 
     return(
       <>
-        <div className="fiche-log-carrousel">
-          <div className="carrousel-slider">
+        <div className="carrousel">
+          <div className="carrousel__slider">
               <div className="carrousel-btn">
               <div className="carrousel-previous" alt="Go to previous photo" onClick={previousSlide}>
                 <img src={arrowPrevious} alt="Go to previous photo" />

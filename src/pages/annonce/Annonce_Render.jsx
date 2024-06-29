@@ -3,7 +3,7 @@ import Logements from "../../datas/logements.json";
 
 import { useParams } from "react-router-dom";
 
-import AnnonceCarrousel from "./Annonce_Carrousel";
+import AnnonceCarrousel from "../../components/Carrousel/Carrousel";
 import AnnonceTitle from "./Annonce_Title";
 import AnnonceHost from "./Annonce_Host";
 import AnnonceRate from "./Annonce_Rate";
