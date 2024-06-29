@@ -31,15 +31,15 @@ $mobile-size : 90vw;
 
     @media screen and (max-width: 1200px) {
         grid-template-columns: auto auto;
-        grid-column-end: 2;
     }
 
     @media screen and (max-width: 767.98px) {
-    padding: 0; 
-    display:flex;
-    flex-direction: column;
-    margin: 1rem 0;
-    border-radius: var(--border-mobile);
+        padding: 0; 
+        display:flex;
+        flex-direction: column;
+        margin: 1rem 0;
+        border-radius: var(--border-mobile);
+        background-color: transparent;
     }
 }
 .cards__ul {

@@ -40,13 +40,16 @@ h1 {
     font-size: 24px;
   }
 }
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
 
 a, a:hover, a:visited {
   text-decoration: none;
-  a:hover {
-    color: var(--primary); 
-    transition: 0.8s;
-  }
+}
+a:hover {
+  color: var(--primary);
 }
 
 ul, li {

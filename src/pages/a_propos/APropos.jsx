@@ -1,38 +1,56 @@
-import "./APropos_Style.scss";
-import { useState } from "react";
+import styled from "styled-components";
 import Banner from '../../components/Banner/Banner'
 import BannerAbout from "../../assets/banners/banner_about_img.png"
-import arrowBack from "../../assets/collapsible/arrow_back.svg";
+import Collapse from "../../components/Collapse/Collapse"
 
 import AProposContent from "../../datas/AProposContent"; 
 
+const AProposLayout = styled.div`
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .ul-container {
+    display: flex;
+    width: 60vw;
+    margin-top: 2.25rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    @media screen and (max-width: 1200px) {
+      width: 80vw;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      width: 100%;
+    }
+  }
+`
+
 export default function AProposIndex() {
   document.title = "Kasa - A propos"
-  let [toggle, setToggle] = useState(false)
 
   return (   
-  <div className="a-propos-layout">
+  <AProposLayout>
     <Banner 
       imgSrc={BannerAbout}
       slogan={false}
       opacity={0.3}
       />
-    <ul className="ul-container">
-      {AProposContent.map((item) => (
-        <li key={item.id}>
-          <div className="li-container">
-            <div className="apropos-collapse__category" onClick={(item) => setToggle(!toggle)}>
-              {item.category}
-              <img src={arrowBack} alt="Open menu" /> 
-              </div>
-              {toggle && (
-                <div className="apropos-menu-collapse__content">
-                {item.content}
-              </div>)}
-          </div>
-        </li>
-      ))}
-    </ul>
-  </div>
+      <ul className="ul-container">
+        {AProposContent.map((item =>
+           <Collapse
+            key={item.id}
+            category={item.category}
+            content={item.content}
+            />
+        ))}
+       
+      </ul>
+      
+  </AProposLayout>
   );
 }
