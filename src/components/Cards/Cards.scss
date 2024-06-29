@@ -1,39 +1,57 @@
-:root {
-    --card-desktop : 21.25rem;
-    --card-mobile : 88vw;
-}
-@mixin container {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
-  
-    @media screen and (max-width: 767.98px) and (min-width: 320px) {
-      padding: 0; 
-      flex-direction: column;
-      margin: 1rem 0;
-      border-radius: var(--border-mobile);
-    }
+$desktop-size : 21.25rem;
+$tablet-size : 40vw;
+$mobile-size : 90vw; 
+
+@mixin cards-size {
+    border-radius: var(--border-desktop);
+    height: $desktop-size; 
+    width: $desktop-size;
+
+    @media screen and (max-width: 1200px) {
+        width: $tablet-size; 
+       }
+   
+     @media screen and (max-width: 767.98px) {
+       border-radius: var(--border-mobile);
+       width: $mobile-size;
+     }
+
 }
 
 .cards__container,
 .cards__ul {
-    @include container;
-}
-.cards__container {
-  display: flex; 
-  flex-direction: column; 
-  background-color: var(--bg-color);
+    margin-top: 2rem;
+    border-radius: var(--border-desktop);
+    display: grid; 
+    grid-template-columns: auto auto auto;
+    grid-column-end: 3;
+    grid-auto-rows: auto;
+    gap: 0rem;
+    background-color: var(--bg-color);
 
-  @media screen and (max-width: 767.98px) and (min-width: 320px) {
-    background-color: transparent;
-}
+    @media screen and (max-width: 1200px) {
+        grid-template-columns: auto auto;
+        grid-column-end: 2;
+    }
+
+    @media screen and (max-width: 767.98px) {
+    padding: 0; 
+    display:flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    border-radius: var(--border-mobile);
+    }
 }
 .cards__ul {
-gap: 1.5rem;
+    gap: 1.5rem;
+    width: 100%;
+
+    @media screen and (max-width: 1200px) {
+        column-gap: auto;
+        margin: 1.5rem 0;
+        width: 100%;
+        gap: 1.5rem;
+    }
 }
 
 article {
@@ -41,39 +59,35 @@ article {
         width: 100%;
     }
 }
+
 .cards {
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    height: var(--card-desktop);
-    width: var(--card-desktop);
-    flex:1;
     margin-bottom: 2rem;
     transition: transform 0.5s ease;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.267);
+    @include cards-size;
 
-    @media screen and (max-width: 767.98px) and (min-width: 320px) {
+    @media screen and (max-width: 1200px) {
+        margin-bottom: 0;
+        @include cards-size;
+    }
+
+    @media screen and (max-width: 767.98px) {
         margin-bottom: 1rem;
-        width: var(--card-mobile);
+        @include cards-size;
     }
 
     &:hover {
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
-        ;
     }
 
     &__overlay {
         width: 100%; 
-        height: var(--card-desktop); 
         z-index: 3;
         background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.2), rgba(0,0,0,0.5));
         position: absolute;
-        border-radius: var(--border-desktop); 
-
-        @media screen and (max-width: 767.98px) and (min-width: 320px) {
-            border-radius: var(--border-mobile);
-            width: var(--card-mobile)
-        }
+        @include cards-size;
 
         &:hover {
             transition: 0.4s;
@@ -82,18 +96,11 @@ article {
 
     }
 
-
     &__img {
         object-fit: cover;
-        width: var(--card-desktop);
-        height: var(--card-desktop);
         aspect-ratio: 1 / 1;
-        border-radius: 10px;
         z-index: 1;
-        @media screen and (max-width: 767.98px) and (min-width: 320px) {
-            width: var(--card-mobile);
-            height: var(--card-desktop);
-        }
+        @include cards-size;
     }
     &__title {
         position: relative;
@@ -116,12 +123,4 @@ article {
     text-decoration: none;
     color: unset;
     }
-}
-
-.cards:hover {
-
-    &__overlay {
-        
-    }
-
 }
