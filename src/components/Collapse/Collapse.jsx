@@ -14,12 +14,11 @@ return (
             setToggle(!toggle)
         }}>
             <h2>{category}</h2>
-            <img src={arrow} alt="Open menu" className={toggle ? 'active' : null} /> 
+            <img src={arrow} alt="Open menu" className={toggle ? 'toggled' : null} /> 
             </div>
-            {toggle && (
-                <div className="collapse__toggled">
+                <div className={`collapse__toggled ${toggle ? 'visible' : 'none'}`}>
                     <p>{content}</p>
-                </div>)}
+                </div>
         </div>
     </>
     )

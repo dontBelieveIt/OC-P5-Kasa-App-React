@@ -251,8 +251,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    height: 2.25rem;
+    align-items: baseline;
+    height: auto;
+    gap: 7%;
 
     @media screen and (max-width: 767.98px) and (min-width: 320px) {
       flex-direction: column;

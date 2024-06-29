@@ -4,6 +4,7 @@
 .collapse {
     background-color: var(--primary);
     height: 2.25rem;
+    position: relative;
     border-radius: 5px;
     padding: 0 0.5rem;
     color: white;
@@ -28,10 +29,17 @@
     line-height: 1.4;
     text-align: left;
     margin:0;
+    max-height: 0;
+    display: none;
   }
 }
+ .visible {
+  height: auto;
+  display: block;
+  max-height: fit-content;
+ }
 
-  .active {
+  .toggled {
     transform: rotate(180deg);
     transition: 0.4s;
   }
