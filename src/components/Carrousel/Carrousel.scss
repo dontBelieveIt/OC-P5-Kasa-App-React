@@ -1,14 +1,14 @@
 // For the FicheLogCarrousel function
 @mixin carrousel-size {
-    max-height: 500px; 
+    height: 500px; 
     width: 100%;
-    aspect-ratio: 5 / 2;
+    // aspect-ratio: 5 / 2;
 
     @media screen and (max-width: 1200px) {
-      max-height: 300px;
+      height: 300px;
     }
     @media screen and (max-width: 767.98px) {
-      aspect-ratio: 5 / 4;
+    //   aspect-ratio: 5 / 4;
       border-radius: var(--border-mobile);
     }
 }
@@ -25,17 +25,6 @@
     @include carrousel-size;
   }
 }
-.carrousel__slider {
-@include carrousel-size;
-}
-.carrousel-img {
-    position: absolute;
-    top: 7rem;
-
-    @media screen and (max-width: 767767.98px) {
-        top: 5rem;
-    }
-}
 .carrousel-img.active {
     display:block;
     animation: fade 0.8s;
@@ -51,33 +40,47 @@
 .carrousel-img:not(.active) {
     display: none;
 }
+
 .carrousel-btn {
-    // position: absolute;
-    bottom: 0;
+    // border: 1px solid deeppink;
     z-index: 500;
-    display: flex;
+    // overflow: hidden;
+    display: flex; 
     flex-direction: row;
-    // top: 7rem;
-    border: 1px solid deeppink;
-    overflow: hidden;
+    justify-content: space-between;
+    position: absolute;
+    width: inherit;
+    box-sizing: border-box;
     @include carrousel-size;
+    box-sizing: border-box;
+    width: calc(100% - 4rem);
+    
+        @media screen and (max-width:767.98px) {
+            width: calc(100% - 10%);
+        }
 }
 .carrousel-previous, .carrousel-next {
-width: 30%;
-height: 100%;
-border: 1px solid blue;
-margin: auto;
-position: absolute;
-// top: 6rem;
 display: flex;
 align-items: center;
-padding: 3rem;
+padding: 1rem;
+background-color: transparent;
+width: 20%;
 }
 .carrousel-previous {
-left: -1rem;
-justify-content: flex-start;
+    justify-content: flex-start;
+    opacity: 0.5;
+
+    &:hover {
+        opacity: 1;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3) , transparent);
+    }
 }
 .carrousel-next {
-right: -1rem;
-justify-content: flex-end;
+    justify-content: flex-end;
+    opacity: 0.5;
+
+    &:hover {
+        opacity: 1;
+        background-image: linear-gradient(to left, rgba(255, 255, 255,0.3) , transparent);
+    }
 }

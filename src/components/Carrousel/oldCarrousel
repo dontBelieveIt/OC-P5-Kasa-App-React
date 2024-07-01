@@ -30,21 +30,20 @@ export default function AnnonceCarrousel({cover, pictures}) {
     return(
       <>
         <div className="carrousel">
-          <div className="carrousel-btn">
-                <div className="carrousel-previous" alt="Go to previous photo" onClick={previousSlide}>
-                  <img src={arrowPrevious} alt="Go to previous photo" />
-                </div>
-                <div href="#" className="carrousel-next" alt="Go to next photo" onClick={nextSlide}>
-                  <img src={arrowNext} alt="Go to next photo" />
-                </div>
+          <div className="carrousel__slider">
+              <div className="carrousel-btn">
+              <div className="carrousel-previous" alt="Go to previous photo" onClick={previousSlide}>
+                <img src={arrowPrevious} alt="Go to previous photo" />
+              </div>
+              <div href="#" className="carrousel-next" alt="Go to next photo" onClick={nextSlide}>
+                <img src={arrowNext} alt="Go to next photo" />
+              </div>
              </div>
-          {/* <div className="carrousel__slider"> */}
-              
             {pictures.map((slide, index) =>
               <img className={`carrousel-img ${index === count ? 'active' : 'none'}`} key={index + 1} src={slide} alt={`Image ${index +1}`} />
             )}
           
-          {/* </div> */}
+          </div>
         </div>
     </>
     )

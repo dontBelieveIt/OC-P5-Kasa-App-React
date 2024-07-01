@@ -1,7 +1,7 @@
 // For the FicheLogIndex page
 .fiche-log-index {
     display: flex;
-    border: 1px solid violet;
+    // border: 1px solid violet;
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 2.25rem;
@@ -27,7 +27,7 @@
     display: flex;
     flex-wrap: wrap;
     // width: 100%;
-    border: 1px solid pink;
+    // border: 1px solid pink;
     gap: 1rem;
   }
   @media screen and (max-width: 767.98px) and (min-width: 320px) {
@@ -58,7 +58,7 @@
     align-items: flex-start;
     // width: 100%;
     gap: 0.5rem;
-    border: 1px solid yellow;
+    // border: 1px solid yellow;
   }
   .fiche-log-titre h2 {
     font-size: 1.5rem;
@@ -90,7 +90,7 @@
   }
   //className for the FicheLogHost & the FicheLogRate function
   .fiche-log__host-rate {
-    border: 1px solid cyan;
+    // border: 1px solid cyan;
     flex-wrap: nowrap;
     flex: 4;
     display: flex;
@@ -112,7 +112,7 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-start;
-    border: 1px solid orange;
+    // border: 1px solid orange;
     gap: 1.25rem;
   }
   .fiche-log-host__avatar img {
@@ -134,12 +134,12 @@
     justify-content: flex-end;
     align-items: center;
     height: 2rem;
-    border: 1px solid green;
+    // border: 1px solid green;
   }
   .fiche-log-rate img {
     width: 2rem;
     margin-left: 0.5rem;
-    border: 1px solid indigo;
+    // border: 1px solid indigo;
     @media screen and (max-width: 767.98px) and (min-width: 320px) {
       margin-left:  0; 
       margin-right: 0.5rem;
@@ -148,7 +148,7 @@
 
   //For the FicheLogTag function
   .fiche-log-tag {
-    border: 1px solid violet;
+    // border: 1px solid violet;
     display: flex;
     // width: 23rem;
     justify-content: flex-start;
@@ -178,7 +178,7 @@
   }
   //For the FicheLogDetails function
   .fiche-log-details {
-    border: 1px solid sienna;
+    // border: 1px solid sienna;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
