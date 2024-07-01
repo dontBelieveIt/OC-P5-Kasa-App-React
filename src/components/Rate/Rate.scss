@@ -1,0 +1,18 @@
+@import "../../Styles.scss";
+
+.rate {
+    @include flex-row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 2rem;
+
+  & img {
+    width: 2rem;
+    margin-left: 0.5rem;
+
+    @media screen and (max-width: 767.98px) {
+      margin-left:  0; 
+      margin-right: 0.5rem;
+      } 
+  }
+}

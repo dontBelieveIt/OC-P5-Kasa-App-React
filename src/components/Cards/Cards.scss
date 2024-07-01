@@ -1,9 +1,11 @@
+@import "../../Styles.scss";
+
 $desktop-size : 21.25rem;
 $tablet-size : 40vw;
 $mobile-size : 90vw; 
 
 @mixin cards-size {
-    border-radius: var(--border-desktop);
+    border-radius: $border-desktop;
     height: $desktop-size; 
     width: $desktop-size;
 
@@ -12,10 +14,9 @@ $mobile-size : 90vw;
        }
    
      @media screen and (max-width: 767.98px) {
-       border-radius: var(--border-mobile);
+       border-radius: $border-mobile;
        width: $mobile-size;
      }
-
 }
 
 ul, li {
@@ -26,12 +27,12 @@ ul, li {
 .cards__container,
 .cards__ul {
     margin-top: 2rem;
-    border-radius: var(--border-desktop);
+    border-radius: $border-desktop;
     display: grid; 
     grid-template-columns: auto auto auto;
     grid-column-end: 3;
     grid-auto-rows: auto;
-    background-color: var(--bg-color);
+    background-color: $bg-color;
 
     @media screen and (max-width: 1200px) {
         grid-template-columns: auto auto;  
@@ -40,17 +41,17 @@ ul, li {
     }
 
     @media screen and (max-width: 767.98px) {
+        @include flex-column;
         padding: 0; 
-        display:flex;
-        flex-direction: column;
         margin: 1rem 0;
-        border-radius: var(--border-mobile);
+        border-radius: $border-mobile;
         background-color: transparent;
     }
 }
 .cards__ul {
     gap: 3rem;
     width: 100%;
+    margin-bottom: 1rem;
 
     @media screen and (max-width: 1200px) {
         column-gap: auto;
@@ -61,15 +62,13 @@ ul, li {
 }
 
 article {
-    @media screen and (max-width: 767.98px) and (min-width: 320px) {
+    @media screen and (max-width: 767.98px) {
         width: 100%;
     }
 }
 
 .cards {
-    display: flex;
-    flex-direction: column;
-    // margin-bottom: 2rem;
+    @include flex-column;
     transition: transform 0.5s ease;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.267);
     @include cards-size;
@@ -116,11 +115,11 @@ article {
         left: 0.5rem;
         font-size: 18px;
         color: white;
-        text-shadow: var(--text-shadow);
+        text-shadow: $text-shadow;
         font-weight: 700;
         z-index: 5;
 
-        @media screen and (max-width: 767.98px) and (min-width: 320px) {
+        @media screen and (max-width: 767.98px) {
             width: 22rem;
             font-size: 22px;
         }

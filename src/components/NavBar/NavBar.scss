@@ -1,24 +1,18 @@
+@import "../../Styles.scss";
+
 // NavBar style
 .nav-bar {
-  font-family: var(--font);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 0;
-  }
-  .nav-bar a {
+  font-family: $font;
+  color: #111;
+  @include flex-row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+
+  & a {
     color: inherit;
   }
-  .underlined {
-    border-bottom: 1px solid black;
-  }
-  .kasa-logo img {
-    height: 4.25rem;
-    @media screen and (max-width: 767.98px) and (min-width: 320px) {
-      height: 2.25rem;
-    }
-  }
+}
   
   .nav-btn > button {
     border: none;
@@ -26,3 +20,18 @@
     font-size: 14px;
     text-transform: uppercase;
   }
+  .nav-btn > button:hover {
+    color: $primary;
+  }
+  .underlined {
+    border-bottom: 1px solid black;
+  }
+
+.kasa-logo img {
+  height: 4.25rem;
+  
+  @media screen and (max-width: 767.98px) {
+    height: 2.25rem;
+  }
+}
+  

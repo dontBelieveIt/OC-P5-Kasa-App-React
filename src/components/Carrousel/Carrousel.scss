@@ -1,30 +1,29 @@
-// For the FicheLogCarrousel function
+@import "../../Styles.scss";
+
 @mixin carrousel-size {
     height: 500px; 
     width: 100%;
-    // aspect-ratio: 5 / 2;
 
     @media screen and (max-width: 1200px) {
       height: 300px;
     }
     @media screen and (max-width: 767.98px) {
-    //   aspect-ratio: 5 / 4;
-      border-radius: var(--border-mobile);
+      border-radius: $border-mobile;
     }
 }
 
 .carrousel {
-    display:flex;
-    flex-direction: row;
+    @include flex-row;
     @include carrousel-size;
 
   &, .carrousel-img {
-    background-color: var(--grey);
-    border-radius: var(--border-desktop);
+    background-color: $grey;
+    border-radius: $border-desktop;
     object-fit: cover;
     @include carrousel-size;
   }
 }
+
 .carrousel-img.active {
     display:block;
     animation: fade 0.8s;
@@ -40,31 +39,38 @@
 .carrousel-img:not(.active) {
     display: none;
 }
+.slides-number {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    color: white;
+}
 
 .carrousel-btn {
-    // border: 1px solid deeppink;
+    @include flex-row;
     z-index: 500;
-    // overflow: hidden;
-    display: flex; 
-    flex-direction: row;
     justify-content: space-between;
     position: absolute;
     width: inherit;
     box-sizing: border-box;
     @include carrousel-size;
-    box-sizing: border-box;
-    width: calc(100% - 4rem);
+    width: calc(100% - (2 * $margin-desktop));
     
         @media screen and (max-width:767.98px) {
-            width: calc(100% - 10%);
+            width: calc(100% - (2 * $margin-mobile));
         }
 }
 .carrousel-previous, .carrousel-next {
-display: flex;
-align-items: center;
-padding: 1rem;
-background-color: transparent;
-width: 20%;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: transparent;
+    width: 20%;
+    border-radius: $border-desktop;
+
+    @media screen and (max-width:767.98px) {
+        border-radius: $border-mobile;
+    }
 }
 .carrousel-previous {
     justify-content: flex-start;
@@ -72,7 +78,7 @@ width: 20%;
 
     &:hover {
         opacity: 1;
-        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3) , transparent);
+        background-image: linear-gradient(to right, rgba(196, 196, 196, 0.3) , transparent);
     }
 }
 .carrousel-next {
@@ -81,6 +87,9 @@ width: 20%;
 
     &:hover {
         opacity: 1;
-        background-image: linear-gradient(to left, rgba(255, 255, 255,0.3) , transparent);
+        background-image: linear-gradient(to left, rgba(196, 196, 196,0.3) , transparent);
     }
+}
+.one {
+    display: none;
 }

@@ -1,0 +1,23 @@
+@import "../../Styles.scss";
+
+
+.avatar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1.25rem;
+
+    &__photo {
+        width: 3em;
+        height: 3em;
+        border-radius: 100px;
+        background-color: $grey;
+        object-fit: cover;
+    }
+    &__name {
+        text-align: left;
+        color: $primary;
+        align-items: center;
+    }
+}

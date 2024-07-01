@@ -11,7 +11,3 @@ export const AnnonceContextProvider = (props) => {
         </AnnonceContext.Provider>
     )
 }
-
-// AnnonceContextProvider.propTypes = {
-//     children: PropTypes.node.isRequired,
-// }; 

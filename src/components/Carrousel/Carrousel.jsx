@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import arrowPrevious from "../../assets/carrousel/arrowPrevious.svg"; 
 import arrowNext from "../../assets/carrousel/arrowNext.svg";
 import "./Carrousel.scss"
 
-export default function AnnonceCarrousel({cover, pictures}) {
+export default function Carrousel({pictures}) {
   const [ count, setCount ] = useState(0); 
-  const [ active, setActive ] = useState(false)
+  const [ active, setActive ] = useState(false); 
   const nbSlides = pictures.length; 
   console.log(nbSlides)
 
@@ -27,24 +27,32 @@ export default function AnnonceCarrousel({cover, pictures}) {
     setActive(true)
   } 
 
+  const [ one, setOne ] = useState(false); 
+  useEffect(() => {
+    if (nbSlides > 1) {
+        setOne(false)
+    } else {
+        setOne(true)
+    }
+  }, [nbSlides])
+
     return(
       <>
         <div className="carrousel">
           <div className="carrousel-btn">
-                <div className="carrousel-previous" alt="Go to previous photo" onClick={previousSlide}>
-                  <img src={arrowPrevious} alt="Go to previous photo" />
-                </div>
-                <div href="#" className="carrousel-next" alt="Go to next photo" onClick={nextSlide}>
-                  <img src={arrowNext} alt="Go to next photo" />
-                </div>
-             </div>
-          {/* <div className="carrousel__slider"> */}
+            <div className={`carrousel-previous ${one === true ? 'one' : 'none'}`} alt="Go to previous photo" onClick={previousSlide}>
+              <img src={arrowPrevious} alt="Go to previous photo" />
+            </div>
+            <span className="slides-number">{count + 1}/{nbSlides}</span>
+            <div href="#" className={`carrousel-next ${one === true ? 'one' : 'none'}`} alt="Go to next photo" onClick={nextSlide}>
+              <img src={arrowNext} alt="Go to next photo" />
+            </div>
+          </div>
               
             {pictures.map((slide, index) =>
               <img className={`carrousel-img ${index === count ? 'active' : 'none'}`} key={index + 1} src={slide} alt={`Image ${index +1}`} />
             )}
           
-          {/* </div> */}
         </div>
     </>
     )
