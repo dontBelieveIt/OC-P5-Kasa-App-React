@@ -1,15 +1,60 @@
-// import * as React from 'react';
-// import { ScrollView } from 'react-native';
-// import { useScrollToTop } from '@react-navigation/native';
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import "../Styles.scss";
+import arrow from "../assets/collapsible/arrow_back.svg"
 
-// export default function ScrollTopTopButton() {
-//   const ref = React.useRef(null);
+const ScrollStyled = styled.span`
+.topButton {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
 
-//   useScrollToTop(
-//     React.useRef({
-//       scrollToTop: () => ref.current?.scrollTo({ y: 100 }),
-//     })
-//   );
+    .topButton:hover {
+    background-color: #ff6060;
+    }
+`
 
-//   return <ScrollView ref={ref}>{/* content */}</ScrollView>;
-// }
+export default function ScrollTopTopButton() {
+    const [ backToTop, setBackToTop ] = useState(false)
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 400) {
+                setBackToTop(true)
+            } else { 
+                setBackToTop(false)
+            }
+        })
+    }, [])
+
+    const buttonTop = () => {
+        window.scrollTo({
+            top: 0, 
+            behaviour: "auto"
+        })
+    }
+
+    return(
+        <>
+            <ScrollStyled>
+                {backToTop && (
+                <button className='topButton' onClick={buttonTop}>
+                    <img src={arrow} alt="Scroll back to the top of the page" />
+                </button>)}
+            </ScrollStyled>
+        </>
+  )
+}

@@ -36,10 +36,17 @@ export default function Carrousel({pictures}) {
     }
   }, [nbSlides])
 
+  const scrollToCarrousel = () => {
+    window.scrollTo({
+        top: 0, 
+        behaviour: "auto"
+    })
+}
+
     return(
       <>
         <div className="carrousel">
-          <div className="carrousel-btn">
+          <div className="carrousel-btn" onClick={scrollToCarrousel}>
             <div className={`carrousel-previous ${one === true ? 'one' : 'none'}`} alt="Go to previous photo" onClick={previousSlide}>
               <img src={arrowPrevious} alt="Go to previous photo" />
             </div>

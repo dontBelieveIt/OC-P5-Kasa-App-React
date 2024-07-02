@@ -40,8 +40,12 @@
     align-items: flex-start;
     gap: 0.5rem;
 
-    @media screen and (max-width: 426px) {
-         width: 420px;
+    @media screen and (max-width: 767.98px) {
+      margin-top: 0.8rem;
+    }
+
+    @media screen and (max-width: 420px) {
+      width: 420px;
       flex-wrap: wrap;
     }
   }
@@ -83,6 +87,7 @@
 
       @media screen and (max-width: 767.98px) {
         flex-direction: row-reverse;
+        flex: 1;
         align-items: center; 
         justify-content: space-between;
       }
@@ -96,10 +101,16 @@
   }
   &__tag button {
     margin-right: 5%;
+
   @media screen and (max-width: 767.98px) {
-      margin-right: 3%;
-      flex-wrap: wrap;
-      width:100%;
+    margin-right: 3%;
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
     }
   }
   //For the FicheLogDetails function
