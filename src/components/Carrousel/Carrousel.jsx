@@ -7,7 +7,6 @@ export default function Carrousel({pictures}) {
   const [ count, setCount ] = useState(0); 
   const [ active, setActive ] = useState(false); 
   const nbSlides = pictures.length; 
-  console.log(nbSlides)
 
   const previousSlide = () => { 
     if (count > 0) {
@@ -16,7 +15,6 @@ export default function Carrousel({pictures}) {
       setCount(nbSlides - 1)
     }
     setActive(true)
-    console.log()
   }
   const nextSlide = () => { 
     if (count < nbSlides - 1) {
@@ -46,20 +44,20 @@ export default function Carrousel({pictures}) {
     return(
       <>
         <div className="carrousel">
-          <div className="carrousel-btn" onClick={scrollToCarrousel}>
-            <div className={`carrousel-previous ${one === true ? 'one' : 'none'}`} alt="Go to previous photo" onClick={previousSlide}>
+          {/* button gestion for the carrousel element */}
+          <div className={`carrousel-btn ${one === true ? 'one' : 'none'}`} onClick={scrollToCarrousel}>
+            <div className="carrousel-previous" alt="Go to previous photo" onClick={previousSlide}>
               <img src={arrowPrevious} alt="Go to previous photo" />
             </div>
             <span className="slides-number">{count + 1}/{nbSlides}</span>
-            <div href="#" className={`carrousel-next ${one === true ? 'one' : 'none'}`} alt="Go to next photo" onClick={nextSlide}>
+            <div href="#" className="carrousel-next" alt="Go to next photo" onClick={nextSlide}>
               <img src={arrowNext} alt="Go to next photo" />
             </div>
           </div>
-              
+             {/* The carrousel's pictures are generated here  */}
             {pictures.map((slide, index) =>
               <img className={`carrousel-img ${index === count ? 'active' : 'none'}`} key={index + 1} src={slide} alt={`Image ${index +1}`} />
             )}
-          
         </div>
     </>
     )

@@ -30,6 +30,7 @@ const ScrollStyled = styled.span`
 
 export default function ScrollTopTopButton() {
     const [ backToTop, setBackToTop ] = useState(false)
+    // is used to determine if the user has scrolled on the page past 400px 
     useEffect(() => {
         window.addEventListener("scroll", () => {
             if (window.scrollY > 400) {

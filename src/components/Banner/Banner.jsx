@@ -10,6 +10,7 @@ function Banner({imgSrc, slogan, opacity}) {
       <div className="banner" alt="Chez vous, partout et ailleurs">
         <div className="banner__overlay" style={overlayOpacity}></div>
         <img className="banner__img" src={imgSrc} alt="Bannière représentant un paysage" />
+        {/* if true, the slogan is returned, if false, only the img will appear */}
         {slogan ? <h1>Chez vous, partout et ailleurs</h1> :  null}
       </div>
   );

@@ -6,6 +6,8 @@ import { NavLink, useLocation } from "react-router-dom";
 
 export default function NavBar() {
   const path = useLocation(); 
+  
+  // function set to underlined element if on its page
   const [underlined, setUnderlined] = useState(""); 
   useEffect(() => {
     if (path.pathname === "/") {

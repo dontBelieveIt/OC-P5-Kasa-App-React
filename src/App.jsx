@@ -13,6 +13,7 @@ export default function App() {
     <>
       <div className="App">
         <Suspense fallback={<LoadingPage />}>
+        {/* context provider used to id the announce and redirect the page, as well as load elements */}
           <AnnonceContextProvider>
             <Router />
           </AnnonceContextProvider>

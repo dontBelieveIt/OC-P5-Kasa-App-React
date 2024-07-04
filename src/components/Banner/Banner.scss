@@ -25,16 +25,16 @@
   &__overlay {
     background: black;
     height: inherit;
-    left: 2rem;
+    left: $margin-desktop;
     border-radius: $border-desktop;
-    right: 2rem;
+    right: $margin-desktop;
     position: absolute;
     z-index: 3;
 
     @media screen and (max-width: 767.98px) {
       margin: 0;
-      left: 5%;
-      right: 5%;
+      left: $margin-mobile;
+      right: $margin-mobile;
       border-radius: $border-mobile;
     }
   }

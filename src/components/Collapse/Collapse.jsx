@@ -5,6 +5,7 @@ import "./Collapse.scss";
 import arrow from "../../assets/collapsible/arrow_back.svg"; 
 
 function Collapse({category, content}) {
+    // useState used to toggle element
     const [toggle, setToggle] = useState(false);    
 
 return (
@@ -17,7 +18,7 @@ return (
             <img src={arrow} alt="Open menu" className={toggle ? 'toggled' : null} /> 
             </div>
                 <div className={`collapse__toggled ${toggle ? 'visible' : 'none'}`}>
-                    <p>{content}</p>
+                    {content}
                 </div>
         </div>
     </>

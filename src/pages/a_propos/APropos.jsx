@@ -20,7 +20,7 @@ const AProposLayout = styled.div`
     align-items: center;
     gap: 1rem;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1250px) {
       width: 80vw;
     }
 
@@ -41,6 +41,7 @@ export default function AProposIndex() {
       opacity={0.3}
       />
       <ul className="ul-container">
+        {/* collapse item are used here, and a list has been made in datas for the content */}
         {AProposContent.map((item =>
            <Collapse
             key={item.id}
