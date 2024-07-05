@@ -2,13 +2,14 @@ import "./Annonce.scss";
 import Logements from "../../datas/logements.json";
 
 import { redirect, useParams } from "react-router-dom";
+import { Suspense } from "react";
 
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Avatar from "../../components/Avatar/Avatar";
 import Button from "../../components/Button/Button";
 import Rate from "../../components/Rate/Rate";
 import Collapse from "../../components/Collapse/Collapse";
-import { Suspense } from "react";
+
 
 export default function Annonce() {
   const { routeId } = useParams();

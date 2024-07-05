@@ -1,30 +1,36 @@
-.error-div {
+@import "../../Styles.scss";
+
+.error {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2.25rem;
     padding: 2.25rem;
-  }
-  .error-number {
+  
+   &__number {
     font-size: 18rem;
     font-weight: 700;
-    color: var(--primary);
+    color: $primary;
   }
-  .error-msg {
+
+  &__msg {
     font-size: 2.25rem;
-    color: var(--primary);
+    color: $primary;
   }
-  .error-link {
+  &__link {
     font-size: 1.125rem;
     text-decoration: underline;
     font-weight: 500;
+    
+    &__link a {
+      color: unset;
+
+      &__link a:hover {
+        color: $primary;
+        transition: 0.4s;
+      }
+    }
   }
-  .error-link a {
-    color: unset;
-  }
-  .error-link a:hover {
-    color: var(--primary);
-    transition: 0.4s;
-  }
+}
   
