@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import "../Styles.scss";
 
 const LoadingStyle = styled.div`
 .mainCss {
@@ -18,7 +19,7 @@ const LoadingStyle = styled.div`
 .dot {
   width: 20px;
   height: 20px;
-  background-color: var(--primary);
+  background-color: $primary;
   border-radius: 20px;
   transform: translate(0px, -40px);
   animation: bounce 1s infinite;

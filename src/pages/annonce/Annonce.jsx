@@ -3,6 +3,7 @@ import Logements from "../../datas/logements.json";
 
 import { redirect, useParams } from "react-router-dom";
 import { Suspense } from "react";
+import LoadingPage from "../../components/Loading";
 
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Avatar from "../../components/Avatar/Avatar";
@@ -21,7 +22,7 @@ export default function Annonce() {
     document.title = `Kasa - ${annonce.title}`
   return (
     <>
-      <Suspense fallback="Loading">
+      <Suspense fallback={<LoadingPage />}>
         <div className="annonce" key={annonce.id}>
           <Carrousel 
           cover={annonce.cover}

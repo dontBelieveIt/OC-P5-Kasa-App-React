@@ -9,6 +9,7 @@ export default function NavBar() {
   
   // function set to underlined element if on its page
   const [underlined, setUnderlined] = useState(""); 
+  // function to underline, in the NavBar, the page on which we are : wheter Home or APropos
   useEffect(() => {
     if (path.pathname === "/") {
         setUnderlined("home")

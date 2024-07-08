@@ -49,7 +49,6 @@ export default function AProposIndex() {
             content={item.content}
             />
         ))}
-       
       </ul>
       
   </AProposLayout>
