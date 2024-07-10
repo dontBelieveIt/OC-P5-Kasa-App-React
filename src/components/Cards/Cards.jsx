@@ -1,6 +1,7 @@
 import { NavLink, useParams } from "react-router-dom";
 import Logements from "../../datas/logements.json"
 import "./Cards.scss"
+import { Suspense } from "react";
 
 export default function Cards() {
     const { routeId } = useParams();
@@ -22,10 +23,12 @@ export default function Cards() {
                     className="cards__img"
                     alt="Logement"
                   />
-                  <div className="cards__title">
-                    {item.title}
-                    {routeId}
-                  </div>
+                  <Suspense fallback="Titre de l'annonce">
+                    <div className="cards__title">
+                      {item.title}
+                      {routeId}
+                    </div>
+                  </Suspense>
                 </NavLink>
               </article>
             </li>

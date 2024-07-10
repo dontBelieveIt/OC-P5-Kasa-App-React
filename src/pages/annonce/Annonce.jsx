@@ -10,13 +10,11 @@ import Button from "../../components/Button/Button";
 import Rate from "../../components/Rate/Rate";
 import Collapse from "../../components/Collapse/Collapse";
 
-
+  
 export default function Annonce() {
   const { routeId } = useParams(); 
-  // const navigate = useNavigate();
   
   const annonce = Logements.find((annonce)=> annonce.id === routeId);
-  console.log(annonce);
   if (!annonce) {
     return (
       <ErrorPage />

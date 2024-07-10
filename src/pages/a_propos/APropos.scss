@@ -1,0 +1,27 @@
+@import "../../Styles.scss";
+
+.about { 
+
+display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    width: 60vw;
+    margin-top: 2.25rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    @media screen and (max-width: 1250px) {
+      width: 80vw;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      width: 100%;
+    }
+  }
+}

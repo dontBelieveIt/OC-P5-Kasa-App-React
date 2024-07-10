@@ -5,7 +5,6 @@ import "./Carrousel.scss"
 
 export default function Carrousel({pictures}) {
   const [ count, setCount ] = useState(0); 
-  const [ active, setActive ] = useState(false); 
   const nbSlides = pictures.length; 
 
   const previousSlide = () => { 
@@ -14,7 +13,6 @@ export default function Carrousel({pictures}) {
     } else {
       setCount(nbSlides - 1)
     }
-    setActive(true)
   }
   const nextSlide = () => { 
     if (count < nbSlides - 1) {
@@ -22,7 +20,6 @@ export default function Carrousel({pictures}) {
     } else {
       setCount(0)
     }
-    setActive(true)
   } 
 
   const [ one, setOne ] = useState(false); 
