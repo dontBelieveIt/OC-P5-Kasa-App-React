@@ -6,6 +6,9 @@ This is project number 5 from the Web Developer program at OpenClassrooms. The a
 * ReactJS: Utilizes ReactJS for building the user interface.
 * ReactRouter: Incorporates ReactRouter for seamless navigation within the application.
 
+## Demo 
+You can see ans test the website [here](https://cosmic-squirrel-11fe48.netlify.app/). 
+
 ## Installation
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
